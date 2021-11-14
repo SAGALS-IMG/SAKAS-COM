@@ -221,12 +221,20 @@ begin
 end;
 
 procedure TForm_PW.SB_CopyClick(Sender: TObject);
+var
+  lComp : TComponent;
+  lStr : string;
 begin
+//PData := SData[UD_Tpro.Position];
+//  case Form_Main.CB_Fromat.ItemIndex of
+//    0:Load_ByteData(Form_Main.Edit_FN.Text,0,Sender);
+//    1:Load_WORDData(Form_Main.Edit_FN.Text,Sender);
+//    2:Load_DWORDData(Form_Main.Edit_FN.Text,Sender);
+//    3:Load_SglData(Form_Main.Edit_FN.Text,Sender);
+//    4:Load_Data(Form_Main.Edit_FN.Text,Sender);
+//  end;
+
   Clipboard.AsText := Edit_Left.Text+','+Edit_Top.Text+','+Edit_Right.Text+','+Edit_Bottom.Text;
-//  Form_Imager.Edit_ROI_X1.Text := Edit_Left.Text;
-//  Form_Imager.Edit_ROI_Y1.Text := Edit_Top.Text;
-//  Form_Imager.Edit_ROI_X2.Text := Edit_Right.Text;
-//  Form_Imager.Edit_ROI_Y2.Text := Edit_Bottom.Text;
 end;
 
 procedure TForm_PW.BB_SaveClick(Sender: TObject);

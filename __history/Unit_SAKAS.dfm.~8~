@@ -26,7 +26,7 @@ object Form_SAKAS: TForm_SAKAS
     ExplicitTop = -6
     object Label11: TLabel
       Left = 254
-      Top = 8
+      Top = 7
       Width = 55
       Height = 16
       Caption = 'Tag file: '
@@ -39,9 +39,9 @@ object Form_SAKAS: TForm_SAKAS
     end
     object Label_FN: TLabel
       Left = 307
-      Top = 8
-      Width = 12
-      Height = 16
+      Top = 7
+      Width = 45
+      Height = 19
       Caption = '   '
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText

@@ -23,9 +23,8 @@ object Form_SAKAS: TForm_SAKAS
     Align = alTop
     BevelOuter = bvNone
     TabOrder = 0
-    ExplicitTop = -6
     object Label11: TLabel
-      Left = 254
+      Left = 257
       Top = 8
       Width = 55
       Height = 16
@@ -38,7 +37,7 @@ object Form_SAKAS: TForm_SAKAS
       ParentFont = False
     end
     object Label_FN: TLabel
-      Left = 307
+      Left = 242
       Top = 8
       Width = 12
       Height = 16
@@ -53,7 +52,7 @@ object Form_SAKAS: TForm_SAKAS
     object Panel2: TPanel
       Left = 0
       Top = 0
-      Width = 257
+      Width = 254
       Height = 32
       Align = alLeft
       BevelOuter = bvNone
@@ -84,7 +83,7 @@ object Form_SAKAS: TForm_SAKAS
           0003737FFFFFFFFF7F7330099999999900333777777777777733}
         NumGlyphs = 2
         ParentFont = False
-        TabOrder = 1
+        TabOrder = 0
         OnClick = BB_SaveClick
       end
       object BB_SaveAs: TBitBtn
@@ -113,7 +112,7 @@ object Form_SAKAS: TForm_SAKAS
           3BB33773333773333773B333333B3333333B7333333733333337}
         NumGlyphs = 2
         ParentFont = False
-        TabOrder = 2
+        TabOrder = 1
         OnClick = BB_SaveAsClick
       end
       object BB_Load: TBitBtn
@@ -142,7 +141,7 @@ object Form_SAKAS: TForm_SAKAS
           5555555555555555555555555555555555555555555555555555}
         NumGlyphs = 2
         ParentFont = False
-        TabOrder = 0
+        TabOrder = 2
         OnClick = BB_LoadClick
       end
     end
@@ -173,6 +172,10 @@ object Form_SAKAS: TForm_SAKAS
     object TabSheet0: TTabSheet
       Caption = '  Sample  '
       ImageIndex = 3
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Panel6: TPanel
         Left = 0
         Top = 0
@@ -276,6 +279,10 @@ object Form_SAKAS: TForm_SAKAS
     object TabSheet1: TTabSheet
       Caption = 'BL cond.'
       ImageIndex = 2
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Panel5: TPanel
         Left = 0
         Top = 0
@@ -620,6 +627,10 @@ object Form_SAKAS: TForm_SAKAS
     object TabSheet2: TTabSheet
       Caption = 'Imager'
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Panel3: TPanel
         Left = 0
         Top = 0
@@ -941,6 +952,10 @@ object Form_SAKAS: TForm_SAKAS
       DoubleBuffered = False
       ImageIndex = 4
       ParentDoubleBuffered = False
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Panel9: TPanel
         Left = 0
         Top = 0

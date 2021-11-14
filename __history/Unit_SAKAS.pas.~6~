@@ -181,7 +181,7 @@ begin
   JvHLEditor.ReadOnly := true;
   JvHLEditor.Modified := false;
 
-  Load_Karte(ChangeFileExt( Application.ExeName, '.INI' ),Sender);
+  //Load_Karte(ChangeFileExt( Application.ExeName, '.INI' ),Sender);
   PageControl1.TabIndex := 0;
 end;
 
@@ -199,7 +199,7 @@ begin
   finally
     Ini.Free;
   end;
-  Save_Karte(ChangeFileExt( Application.ExeName, '.INI' ),Sender);
+  //Save_Karte(ChangeFileExt( Application.ExeName, '.INI' ),Sender);
 end;
 
 procedure TForm_SAKAS.Load_Karte(FN: string; Sender: TObject);
@@ -313,8 +313,7 @@ begin
     Ini.Free;
   end;
   //Memo.Lines.LoadFromFile(Tag_FN);
-  if Tag_FN<>'' then
-    JvHLEditor.Lines.LoadFromFile(Tag_FN);
+  JvHLEditor.Lines.LoadFromFile(Tag_FN);
 end;
 
 procedure TForm_SAKAS.Save_Karte(FN: string; Sender: TObject);

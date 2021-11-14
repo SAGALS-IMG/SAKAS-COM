@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons, Vcl.ExtCtrls,
-   Vcl.ComCtrls, Math, Unit_LP,ClipBrd, IniFiles, SelShape, main;
+   Vcl.ComCtrls, Math, Unit_LP,ClipBrd, IniFiles, SelShape;
 
 const
   PX_Max = 2600;
@@ -112,7 +112,7 @@ type
   public
     { Public êÈåæ }
     TmpData, PData : TData;
-    //SData : array[0..10] of TData;
+    //SData : array[0..5] of TData;
     IData : TIData;
     OW,OH,PW,PH, OFFX,OFFY,iimax,MaskV :longint;
     Mask : array[-5..5,-5..5] of longint;
@@ -127,6 +127,8 @@ var
 implementation
 
 {$R *.dfm}
+
+uses main;
 
 procedure TForm_PW.FormCreate(Sender: TObject);
 var
@@ -219,7 +221,19 @@ begin
 end;
 
 procedure TForm_PW.SB_CopyClick(Sender: TObject);
+var
+  lComp : TComponent;
+  lStr : string;
 begin
+//PData := SData[UD_Tpro.Position];
+//  case Form_Main.CB_Fromat.ItemIndex of
+//    0:Load_ByteData(Form_Main.Edit_FN.Text,0,Sender);
+//    1:Load_WORDData(Form_Main.Edit_FN.Text,Sender);
+//    2:Load_DWORDData(Form_Main.Edit_FN.Text,Sender);
+//    3:Load_SglData(Form_Main.Edit_FN.Text,Sender);
+//    4:Load_Data(Form_Main.Edit_FN.Text,Sender);
+//  end;
+
   Clipboard.AsText := Edit_Left.Text+','+Edit_Top.Text+','+Edit_Right.Text+','+Edit_Bottom.Text;
 //  Form_Imager.Edit_ROI_X1.Text := Edit_Left.Text;
 //  Form_Imager.Edit_ROI_Y1.Text := Edit_Top.Text;
@@ -281,7 +295,7 @@ begin
   lComp := Form_Main.FindComponent('Edit_FN');
   if lComp <> nil  then
   begin
-    lStr := lComp.e .Edit_FN.Text;
+    lStr := TEdit(lComp).Text;
     Load_WORDData(lStr,Sender);
     Draw_Data(Sender);
   end;

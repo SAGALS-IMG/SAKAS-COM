@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons, Vcl.ExtCtrls,
-   Vcl.ComCtrls, Math, Unit_LP,ClipBrd, IniFiles, SelShape, main;
+   Vcl.ComCtrls, Math, Unit_LP,ClipBrd, IniFiles, SelShape;
 
 const
   PX_Max = 2600;
@@ -112,7 +112,7 @@ type
   public
     { Public êÈåæ }
     TmpData, PData : TData;
-    //SData : array[0..10] of TData;
+    //SData : array[0..5] of TData;
     IData : TIData;
     OW,OH,PW,PH, OFFX,OFFY,iimax,MaskV :longint;
     Mask : array[-5..5,-5..5] of longint;
@@ -127,6 +127,8 @@ var
 implementation
 
 {$R *.dfm}
+
+uses main;
 
 procedure TForm_PW.FormCreate(Sender: TObject);
 var
@@ -281,11 +283,10 @@ begin
   lComp := Form_Main.FindComponent('Edit_FN');
   if lComp <> nil  then
   begin
-    lStr := (lComp as Form_Main).Edit_FN.Text;
+    lStr := TEdit(lComp).Text;
     Load_WORDData(lStr,Sender);
+    Draw_Data(Sender);
   end;
-
-  Draw_Data(Sender);
 end;
 
 procedure TForm_PW.Get_PMinMax;

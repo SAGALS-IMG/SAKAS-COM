@@ -483,8 +483,8 @@ object Form_PW: TForm_PW
       Align = alClient
       TabOrder = 1
       object Image1: TImage
-        Left = 0
-        Top = 0
+        Left = 3
+        Top = 4
         Width = 2600
         Height = 2200
         OnMouseDown = Image1MouseDown
