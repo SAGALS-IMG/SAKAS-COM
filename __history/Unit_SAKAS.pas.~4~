@@ -181,7 +181,6 @@ begin
   JvHLEditor.ReadOnly := true;
   JvHLEditor.Modified := false;
 
-  Load_Karte(ChangeFileExt( Application.ExeName, '.INI' ),Sender);
   PageControl1.TabIndex := 0;
 end;
 
@@ -199,7 +198,6 @@ begin
   finally
     Ini.Free;
   end;
-  Save_Karte(ChangeFileExt( Application.ExeName, '.INI' ),Sender);
 end;
 
 procedure TForm_SAKAS.Load_Karte(FN: string; Sender: TObject);
@@ -469,7 +467,6 @@ begin
     Label_FN.Caption := Tag_FN;
     Load_Karte(Tag_FN,Sender);
     JvHLEditor.Lines.LoadFromFile(Tag_FN);
-    JvHLEditor.Modified := false;
   end;
 end;
 
@@ -502,6 +499,10 @@ end;
 
 procedure TForm_SAKAS.CB_EditClick(Sender: TObject);
 begin
+//  if CB_Edit.Checked then
+//    Memo.ReadOnly := false
+//  else
+//    Memo.ReadOnly := true;
   if CB_Edit.Checked then
     JvHLEditor.ReadOnly := false
   else

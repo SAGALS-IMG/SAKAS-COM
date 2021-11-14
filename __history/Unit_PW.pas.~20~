@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons, Vcl.ExtCtrls,
-   Vcl.ComCtrls, Math, Unit_LP,ClipBrd, IniFiles, SelShape;
+   Vcl.ComCtrls, Math, Unit_LP,ClipBrd, IniFiles, SelShape, main;
 
 const
   PX_Max = 2600;
@@ -38,7 +38,6 @@ type
     Label4: TLabel;
     BB_ImgCopy: TBitBtn;
     Label_Size: TLabel;
-    BB_ROICopy: TBitBtn;
     BB_Save: TBitBtn;
     SaveDialog1: TSaveDialog;
     Bevel1: TBevel;
@@ -47,9 +46,18 @@ type
     Edit_No: TEdit;
     UD_Tpro: TUpDown;
     SS: TSelShape;
+    BC_Auto: TCheckBox;
+    SB_Copy: TSpeedButton;
+    Label6: TLabel;
+    Bevel3: TBevel;
+    Label8: TLabel;
+    Label10: TLabel;
 
     procedure BB_ReDrawClick(Sender: TObject);
     procedure Draw_Data(Sender: TObject);
+
+    procedure Find_MinMax;
+
     procedure Load_Data(FN:string;Sender: Tobject);
     procedure Load_SglData(FN:string;Sender: Tobject);
     procedure Load_ImgData(FN:string;Sender: Tobject);
@@ -91,7 +99,6 @@ type
     procedure FormDestroy(Sender: TObject);
     procedure CB_MagChange(Sender: TObject);
     procedure BB_SaveClick(Sender: TObject);
-    procedure BB_ROICopyClick(Sender: TObject);
     procedure Edit_LeftKeyUp(Sender: TObject; var Key: Word;
       Shift: TShiftState);
     procedure UD_TproClick(Sender: TObject; Button: TUDBtnType);
@@ -99,12 +106,13 @@ type
       Shift: TShiftState);
     procedure Edit_PMinKeyPress(Sender: TObject; var Key: Char);
     procedure Edit_PMaxKeyPress(Sender: TObject; var Key: Char);
+    procedure SB_CopyClick(Sender: TObject);
   private
     { Private êÈåæ }
   public
     { Public êÈåæ }
     TmpData, PData : TData;
-    //SData : array[0..10] of TData;
+    SData : array[0..5] of TData;
     IData : TIData;
     OW,OH,PW,PH, OFFX,OFFY,iimax,MaskV :longint;
     Mask : array[-5..5,-5..5] of longint;
@@ -119,8 +127,6 @@ var
 implementation
 
 {$R *.dfm}
-
-uses main;
 
 procedure TForm_PW.FormCreate(Sender: TObject);
 var
@@ -212,7 +218,7 @@ begin
   Draw_Data(Sender);
 end;
 
-procedure TForm_PW.BB_ROICopyClick(Sender: TObject);
+procedure TForm_PW.SB_CopyClick(Sender: TObject);
 begin
   Clipboard.AsText := Edit_Left.Text+','+Edit_Top.Text+','+Edit_Right.Text+','+Edit_Bottom.Text;
 //  Form_Imager.Edit_ROI_X1.Text := Edit_Left.Text;
@@ -260,6 +266,9 @@ begin
 end;
 
 procedure TForm_PW.UD_TproClick(Sender: TObject; Button: TUDBtnType);
+var
+  lComp : TComponent;
+  lStr : string;
 begin
 //PData := SData[UD_Tpro.Position];
 //  case Form_Main.CB_Fromat.ItemIndex of
@@ -269,10 +278,13 @@ begin
 //    3:Load_SglData(Form_Main.Edit_FN.Text,Sender);
 //    4:Load_Data(Form_Main.Edit_FN.Text,Sender);
 //  end;
-
-  Load_WORDData(Form_Main.Edit_FN.Text,Sender);
-
-  Draw_Data(Sender);
+  lComp := Form_Main.FindComponent('Edit_FN');
+  if lComp <> nil  then
+  begin
+    lStr := TEdit(lComp).Text;
+    Load_WORDData(lStr,Sender);
+    Draw_Data(Sender);
+  end;
 end;
 
 procedure TForm_PW.Get_PMinMax;
@@ -294,6 +306,33 @@ begin
   Edit_PMax.Text := PMax.ToString;
 end;
 
+procedure TForm_PW.Find_MinMax;
+var
+  i,j:longint;
+  lMin,lMax : double;
+begin
+  lMin := +1e10;
+  lMax := -1e10;
+  for j:=0 to PH-1 do
+    for i:=0 to PW-1 do
+    begin
+      if lMin>PData[j,i] then
+        lMin := PData[j,i];
+      if lMax<PData[j,i] then
+        lMax := PData[j,i];
+    end;
+
+  if (Round(lMin*100) mod 100=0) then
+    Edit_PMin.Text := Format('%.0f',[lMin])
+  else
+    Edit_PMin.Text := Format('%8.2f',[lMin]);
+
+  if (Round(lMax*100) mod 100=0) then
+    Edit_PMax.Text := Format('%.0f',[lMax])
+  else
+    Edit_PMax.Text := Format('%8.2f',[lMax]);
+end;
+
 
 procedure TForm_PW.Draw_Data(Sender: TObject);
 var
@@ -308,6 +347,9 @@ begin
   BitMap.Width := Image1.Width;
   BitMap.PixelFormat := pf24bit;
   BitMap.Canvas.Pen.Color := clWhite;
+
+  if BC_Auto.Checked then
+    Find_MinMax;
 
   PMin := StrToFloat(Edit_PMin.Text);
   PMax := StrToFloat(Edit_PMax.Text);
@@ -424,7 +466,8 @@ begin
     3:lMag := 1;
   end;
 
-  Label4.Caption := '('+IntToStr(X*lMag)+','+IntToStr(Y*lMag)+')';
+  Label4.Caption := IntToStr(X*lMag);
+  Label6.Caption := IntToStr(Y*lMag);
   if (X>0) and (Y>0) and (X*lMag<PX_Max) and (Y*lMag<PY_Max) then
     Label2.Caption := Format('%12.2f',[PData[Y*lMag,X*lMag]])
   else

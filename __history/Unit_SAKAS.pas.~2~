@@ -131,20 +131,17 @@ type
     Label41: TLabel;
     Label42: TLabel;
     Rot_Memo: TMemo;
-    BB_Load: TBitBtn;
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
 
     procedure Load_Karte(FN: string; Sender: TObject);
     procedure Save_Karte(FN: string; Sender: TObject);
-    procedure Add_Str(FN:string;Section,Key,Data:string;Sender:TObject);
-
     procedure SB_FNClick(Sender: TObject);
     procedure BB_SaveClick(Sender: TObject);
     procedure BB_SaveAsClick(Sender: TObject);
     procedure CB_EditClick(Sender: TObject);
-    procedure BB_LoadClick(Sender: TObject);
 
+    procedure Add_Str(FN:string;Section,Key,Data:string;Sender:TObject);
 
   private
     { Private êÈåæ }
@@ -181,7 +178,6 @@ begin
   JvHLEditor.ReadOnly := true;
   JvHLEditor.Modified := false;
 
-  Load_Karte(ChangeFileExt( Application.ExeName, '.INI' ),Sender);
   PageControl1.TabIndex := 0;
 end;
 
@@ -199,7 +195,6 @@ begin
   finally
     Ini.Free;
   end;
-  Save_Karte(ChangeFileExt( Application.ExeName, '.INI' ),Sender);
 end;
 
 procedure TForm_SAKAS.Load_Karte(FN: string; Sender: TObject);
@@ -461,16 +456,6 @@ begin
   end;
 end;
 
-procedure TForm_SAKAS.BB_LoadClick(Sender: TObject);
-begin
-  if OpenDialog1.Execute then
-  begin
-    Tag_FN := OpenDialog1.FileName;
-    Label_FN.Caption := Tag_FN;
-    Load_Karte(Tag_FN,Sender);
-    JvHLEditor.Lines.LoadFromFile(Tag_FN);
-    JvHLEditor.Modified := false;
-  end;
 end;
 
 procedure TForm_SAKAS.BB_SaveAsClick(Sender: TObject);
@@ -502,6 +487,10 @@ end;
 
 procedure TForm_SAKAS.CB_EditClick(Sender: TObject);
 begin
+//  if CB_Edit.Checked then
+//    Memo.ReadOnly := false
+//  else
+//    Memo.ReadOnly := true;
   if CB_Edit.Checked then
     JvHLEditor.ReadOnly := false
   else

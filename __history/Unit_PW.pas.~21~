@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons, Vcl.ExtCtrls,
-   Vcl.ComCtrls, Math, Unit_LP,ClipBrd, IniFiles, SelShape;
+   Vcl.ComCtrls, Math, Unit_LP,ClipBrd, IniFiles, SelShape, main;
 
 const
   PX_Max = 2600;
@@ -112,7 +112,7 @@ type
   public
     { Public êÈåæ }
     TmpData, PData : TData;
-    //SData : array[0..10] of TData;
+//    SData : array[0..5] of TData;
     IData : TIData;
     OW,OH,PW,PH, OFFX,OFFY,iimax,MaskV :longint;
     Mask : array[-5..5,-5..5] of longint;
@@ -127,8 +127,6 @@ var
 implementation
 
 {$R *.dfm}
-
-uses main;
 
 procedure TForm_PW.FormCreate(Sender: TObject);
 var
@@ -268,6 +266,9 @@ begin
 end;
 
 procedure TForm_PW.UD_TproClick(Sender: TObject; Button: TUDBtnType);
+var
+  lComp : TComponent;
+  lStr : string;
 begin
 //PData := SData[UD_Tpro.Position];
 //  case Form_Main.CB_Fromat.ItemIndex of
@@ -277,10 +278,13 @@ begin
 //    3:Load_SglData(Form_Main.Edit_FN.Text,Sender);
 //    4:Load_Data(Form_Main.Edit_FN.Text,Sender);
 //  end;
-
-  Load_WORDData(Form_Main.Edit_FN.Text,Sender);
-
-  Draw_Data(Sender);
+  lComp := Form_Main.FindComponent('Edit_FN');
+  if lComp <> nil  then
+  begin
+    lStr := TEdit(lComp).Text;
+    Load_WORDData(lStr,Sender);
+    Draw_Data(Sender);
+  end;
 end;
 
 procedure TForm_PW.Get_PMinMax;
@@ -318,8 +322,15 @@ begin
         lMax := PData[j,i];
     end;
 
-  Edit_PMin.Text := lMin.ToString;
-  Edit_PMax.Text := lMax.ToString;
+  if (Round(lMin*100) mod 100=0) then
+    Edit_PMin.Text := Format('%.0f',[lMin])
+  else
+    Edit_PMin.Text := Format('%8.2f',[lMin]);
+
+  if (Round(lMax*100) mod 100=0) then
+    Edit_PMax.Text := Format('%.0f',[lMax])
+  else
+    Edit_PMax.Text := Format('%8.2f',[lMax]);
 end;
 
 

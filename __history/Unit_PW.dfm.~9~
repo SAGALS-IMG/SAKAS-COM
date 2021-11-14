@@ -27,6 +27,7 @@ object Form_PW: TForm_PW
     BevelInner = bvRaised
     BevelOuter = bvLowered
     TabOrder = 0
+    ExplicitWidth = 707
     object Panel3: TPanel
       Left = 2
       Top = 2
@@ -35,6 +36,7 @@ object Form_PW: TForm_PW
       Align = alTop
       BevelOuter = bvNone
       TabOrder = 0
+      ExplicitWidth = 703
       object GroupBox2: TGroupBox
         Left = 0
         Top = 0
@@ -52,6 +54,7 @@ object Form_PW: TForm_PW
         ParentColor = False
         ParentFont = False
         TabOrder = 0
+        ExplicitLeft = 1
         object Bevel2: TBevel
           Left = 559
           Top = 70
@@ -482,6 +485,7 @@ object Form_PW: TForm_PW
       Height = 517
       Align = alClient
       TabOrder = 1
+      ExplicitWidth = 703
       object Image1: TImage
         Left = 3
         Top = 4
