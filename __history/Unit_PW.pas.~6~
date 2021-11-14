@@ -318,13 +318,13 @@ begin
         lMax := PData[j,i];
     end;
 
-  if (Round(lMin*100) mod 100=0) then
-    Edit_PMin.Text := Format('%.0f',[lMin])
+  if lMin/100=0 then
+    Edit_PMin.Text := Format('%df',[lMin])
   else
     Edit_PMin.Text := Format('%8.2f',[lMin]);
 
-  if (Round(lMax*100) mod 100=0) then
-    Edit_PMax.Text := Format('%.0f',[lMax])
+  if lMax/100=0 then
+    Edit_PMax.Text := Format('%df',[lMax])
   else
     Edit_PMax.Text := Format('%8.2f',[lMax]);
 end;
