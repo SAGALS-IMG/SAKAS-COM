@@ -395,16 +395,16 @@ begin
     Ini.WriteString('Proc_1','File_Name',Edit_FN.Text);
     Ini.WriteInteger('Proc_1', 'Width', StrToInt(LEdit_PW.Text));
     Ini.WriteInteger('Proc_1', 'Height', StrToInt(LEdit_PH.Text));
-    Ini.WriteInteger('Proc_1', 'Image_Numer', StrToInt(Edit_ImgN.Text));
+    Ini.WriteInteger('Proc_1', 'Image_Num', StrToInt(Edit_ImgN.Text));
     Ini.WriteInteger('Proc_1', 'Format',CB_Fromat.ItemIndex);
     Ini.WriteInteger('Proc_1', 'BK_Interval', StrToInt(Edit_BKInt.Text));
 
     Ini.WriteString('Proc_1','BK1_File_Name',Edit_FNBK1.Text);
     Ini.WriteString('Proc_1','BK2_File_Name',Edit_FNBK2.Text);
-    Ini.WriteInteger('Proc_1', 'BK_Image_Numer', StrToInt(Edit_BKN.Text));
+    Ini.WriteInteger('Proc_1', 'BK_Image_Num', StrToInt(Edit_BKN.Text));
 
     Ini.WriteString('Proc_1','Off_File_Name',Edit_FNOff.Text);
-    Ini.WriteInteger('Proc_1', 'Off_Image_Numer', StrToInt(Edit_OffN.Text));
+    Ini.WriteInteger('Proc_1', 'Off_Image_Num', StrToInt(Edit_OffN.Text));
 
   finally
     Ini.Free;
