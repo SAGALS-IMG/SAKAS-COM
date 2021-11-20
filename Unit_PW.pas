@@ -9,7 +9,7 @@ uses
 
 const
   PX_Max = 2600;
-  PY_Max = 3200;
+  PY_Max = 2200;
 
 type
   TData = array[-100..PY_Max,-100..PX_Max] of double;
