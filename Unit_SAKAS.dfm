@@ -158,7 +158,7 @@ object Form_SAKAS: TForm_SAKAS
     Top = 32
     Width = 353
     Height = 497
-    ActivePage = TabSheet3
+    ActivePage = TabSheet0
     Align = alLeft
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clMaroon
@@ -172,10 +172,6 @@ object Form_SAKAS: TForm_SAKAS
     object TabSheet0: TTabSheet
       Caption = '  Sample  '
       ImageIndex = 3
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Panel6: TPanel
         Left = 0
         Top = 0
@@ -279,10 +275,6 @@ object Form_SAKAS: TForm_SAKAS
     object TabSheet1: TTabSheet
       Caption = 'BL cond.'
       ImageIndex = 2
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Panel5: TPanel
         Left = 0
         Top = 0
@@ -628,10 +620,6 @@ object Form_SAKAS: TForm_SAKAS
     object TabSheet2: TTabSheet
       Caption = 'Imager'
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Panel3: TPanel
         Left = 0
         Top = 0
