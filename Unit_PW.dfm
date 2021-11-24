@@ -31,7 +31,7 @@ object Form_PW: TForm_PW
       Left = 2
       Top = 2
       Width = 763
-      Height = 103
+      Height = 98
       Align = alTop
       BevelOuter = bvNone
       TabOrder = 0
@@ -39,7 +39,7 @@ object Form_PW: TForm_PW
         Left = 0
         Top = 0
         Width = 763
-        Height = 103
+        Height = 98
         Align = alClient
         Caption = 'Drawing'
         Color = 16510433
@@ -52,6 +52,8 @@ object Form_PW: TForm_PW
         ParentColor = False
         ParentFont = False
         TabOrder = 0
+        ExplicitTop = -1
+        ExplicitHeight = 103
         object Bevel2: TBevel
           Left = 559
           Top = 70
@@ -79,7 +81,7 @@ object Form_PW: TForm_PW
         end
         object Label9: TLabel
           Left = 179
-          Top = 50
+          Top = 51
           Width = 30
           Height = 14
           Caption = 'Mag.'
@@ -170,7 +172,7 @@ object Form_PW: TForm_PW
         end
         object Label5: TLabel
           Left = 254
-          Top = 50
+          Top = 51
           Width = 48
           Height = 14
           Caption = 'Img No.'
@@ -182,10 +184,11 @@ object Form_PW: TForm_PW
           ParentFont = False
         end
         object SB_Copy: TSpeedButton
-          Left = 422
+          Left = 440
           Top = 45
           Width = 22
           Height = 22
+          Hint = 'COPY ROI to Clipboard'
           Flat = True
           Glyph.Data = {
             76010000424D7601000000000000760000002800000020000000100000000100
@@ -201,6 +204,8 @@ object Form_PW: TForm_PW
             00FF37F337F3333777F330EEE033333000FF37FFF7F333F77733300000333000
             03FF3777773337777333333333333333333F3333333333333333}
           NumGlyphs = 2
+          ParentShowHint = False
+          ShowHint = True
           OnClick = SB_CopyClick
         end
         object Bevel3: TBevel
@@ -305,9 +310,9 @@ object Form_PW: TForm_PW
             '100%')
         end
         object BB_ReDraw: TBitBtn
-          Left = 3
+          Left = 6
           Top = 20
-          Width = 80
+          Width = 75
           Height = 25
           Caption = 'Redraw'
           Font.Charset = DEFAULT_CHARSET
@@ -467,7 +472,7 @@ object Form_PW: TForm_PW
         end
         object BC_Auto: TCheckBox
           Left = 92
-          Top = 51
+          Top = 50
           Width = 60
           Height = 17
           Caption = 'Auto'
@@ -477,14 +482,16 @@ object Form_PW: TForm_PW
     end
     object ScrollBox1: TScrollBox
       Left = 2
-      Top = 105
+      Top = 100
       Width = 763
-      Height = 517
+      Height = 522
       Align = alClient
       TabOrder = 1
+      ExplicitTop = 105
+      ExplicitHeight = 517
       object Image1: TImage
-        Left = 0
-        Top = 0
+        Left = 3
+        Top = -2
         Width = 2600
         Height = 2200
         OnMouseDown = Image1MouseDown
