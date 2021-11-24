@@ -389,7 +389,7 @@ begin
       Ini.WriteInteger('Method','Pro_angle',360);
     Ini.WriteInteger('Method','Step_Mode',CB_Rot_Mode.ItemIndex);
     Ini.WriteString('Method','Rotdata_File_Name',Edit_FN_Rotdata.Text);
-    Ini.WriteInteger('Method','FS_Number',StrToInt(LEdit_FSN.Text));
+    Ini.WriteInteger('Method','FS_Num',StrToInt(LEdit_FSN.Text));
 
     //Created_Data
     Ini.WriteString('Proc_1','File_Name',Edit_FN.Text);
