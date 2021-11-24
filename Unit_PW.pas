@@ -12,8 +12,8 @@ const
   PY_Max = 2200;
 
 type
-  TData = array[-100..PY_Max,-100..PX_Max] of double;
-  TIData = array[-100..PY_Max,-100..PX_Max] of WORD;
+  TData = array[-50..PY_Max,-50..PX_Max] of double;
+  TIData = array[-50..PY_Max,-50..PX_Max] of WORD;
 
   TForm_PW = class(TForm)
     Panel2: TPanel;
@@ -221,9 +221,9 @@ begin
 end;
 
 procedure TForm_PW.SB_CopyClick(Sender: TObject);
-var
-  lComp : TComponent;
-  lStr : string;
+//var
+//  lComp : TComponent;
+//  lStr : string;
 begin
 //PData := SData[UD_Tpro.Position];
 //  case Form_Main.CB_Fromat.ItemIndex of
@@ -435,8 +435,7 @@ procedure TForm_PW.Image1MouseDown(Sender: TObject; Button: TMouseButton;
   Shift: TShiftState; X, Y: Integer);
 var
   lMag : longint;
-  i,j,k,NumP,lX,lY,TI,CI:longint;
-  Founded : boolean;
+  i:longint;
 begin
   lMag :=10;
   case CB_Mag.ItemIndex of
@@ -948,12 +947,12 @@ end;
 
 procedure TForm_PW.Median_Hol_Img(var Img: TData);
 var
-  i,j,ii,jj,k, lPW, lPH:longint;
+  i,j,ii,jj:longint;
   SData : array[0..10] of double;
 
 procedure QuickSort(iLo, iHi: longint);
 var
-  Lo, Hi, Li: longint;
+  Lo, Hi: longint;
   Mid, T:double;
 begin
   Lo := iLo;
@@ -994,12 +993,12 @@ end;
 
 procedure TForm_PW.Median_Img(var Img: TData);
 var
-  i,j,ii,jj,k, lPW, lPH:longint;
+  i,j,ii,jj:longint;
   SData : array[0..10] of double;
 
 procedure QuickSort(iLo, iHi: longint);
 var
-  Lo, Hi, Li: longint;
+  Lo, Hi: longint;
   Mid, T:double;
 begin
   Lo := iLo;
@@ -1040,12 +1039,12 @@ end;
 
 procedure TForm_PW.Median_Img2(var Img: TData);
 var
-  i,j,ii,jj,k, lPW, lPH:longint;
+  i,j,ii,jj:longint;
   SData : array[0..10] of double;
 
 procedure QuickSort(iLo, iHi: longint);
 var
-  Lo, Hi, Li: longint;
+  Lo, Hi: longint;
   Mid, T:double;
 begin
   Lo := iLo;
