@@ -52,8 +52,6 @@ object Form_PW: TForm_PW
         ParentColor = False
         ParentFont = False
         TabOrder = 0
-        ExplicitTop = -1
-        ExplicitHeight = 103
         object Bevel2: TBevel
           Left = 559
           Top = 70
@@ -487,11 +485,9 @@ object Form_PW: TForm_PW
       Height = 522
       Align = alClient
       TabOrder = 1
-      ExplicitTop = 105
-      ExplicitHeight = 517
       object Image1: TImage
-        Left = 3
-        Top = -2
+        Left = 0
+        Top = 0
         Width = 2600
         Height = 2200
         OnMouseDown = Image1MouseDown
