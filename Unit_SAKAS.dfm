@@ -23,7 +23,6 @@ object Form_SAKAS: TForm_SAKAS
     Align = alTop
     BevelOuter = bvNone
     TabOrder = 0
-    ExplicitWidth = 652
     object Label11: TLabel
       Left = 254
       Top = 8
@@ -153,14 +152,13 @@ object Form_SAKAS: TForm_SAKAS
     Width = 711
     Height = 19
     Panels = <>
-    ExplicitWidth = 652
   end
   object PageControl1: TPageControl
     Left = 0
     Top = 32
     Width = 353
     Height = 497
-    ActivePage = TabSheet0
+    ActivePage = TabSheet4
     Align = alLeft
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clMaroon
@@ -277,6 +275,10 @@ object Form_SAKAS: TForm_SAKAS
     object TabSheet1: TTabSheet
       Caption = 'BL cond.'
       ImageIndex = 2
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Panel5: TPanel
         Left = 0
         Top = 0
@@ -622,6 +624,10 @@ object Form_SAKAS: TForm_SAKAS
     object TabSheet2: TTabSheet
       Caption = 'Imager'
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Panel3: TPanel
         Left = 0
         Top = 0
@@ -1156,10 +1162,6 @@ object Form_SAKAS: TForm_SAKAS
     end
     object TabSheet4: TTabSheet
       Caption = 'Created Data'
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Panel4: TPanel
         Left = 0
         Top = 0
@@ -1527,7 +1529,6 @@ object Form_SAKAS: TForm_SAKAS
     BevelOuter = bvNone
     Caption = 'Panel7'
     TabOrder = 3
-    ExplicitWidth = 299
     object Panel8: TPanel
       Left = 0
       Top = 0
@@ -1536,7 +1537,6 @@ object Form_SAKAS: TForm_SAKAS
       Align = alTop
       BevelOuter = bvNone
       TabOrder = 0
-      ExplicitWidth = 299
       object CB_Edit: TCheckBox
         Left = 309
         Top = 0
@@ -1552,7 +1552,6 @@ object Form_SAKAS: TForm_SAKAS
         ParentFont = False
         TabOrder = 0
         OnClick = CB_EditClick
-        ExplicitLeft = 250
       end
     end
     object JvHLEditor: TJvHLEditor
@@ -1622,7 +1621,6 @@ object Form_SAKAS: TForm_SAKAS
       Colors.Statement.BackColor = clWindow
       Colors.PlainText.ForeColor = clWindowText
       Colors.PlainText.BackColor = clWindow
-      ExplicitWidth = 299
     end
   end
   object OpenDialog1: TOpenDialog
