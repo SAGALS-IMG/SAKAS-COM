@@ -158,7 +158,7 @@ object Form_SAKAS: TForm_SAKAS
     Top = 32
     Width = 353
     Height = 497
-    ActivePage = TabSheet4
+    ActivePage = TabSheet3
     Align = alLeft
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clMaroon
