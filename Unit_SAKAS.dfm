@@ -2,7 +2,7 @@ object Form_SAKAS: TForm_SAKAS
   Left = 0
   Top = 0
   Caption = 'SAKAS Info.'
-  ClientHeight = 548
+  ClientHeight = 567
   ClientWidth = 711
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -148,17 +148,18 @@ object Form_SAKAS: TForm_SAKAS
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 529
+    Top = 548
     Width = 711
     Height = 19
     Panels = <>
+    ExplicitTop = 529
   end
   object PageControl1: TPageControl
     Left = 0
     Top = 32
     Width = 353
-    Height = 497
-    ActivePage = TabSheet3
+    Height = 516
+    ActivePage = TabSheet2
     Align = alLeft
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clMaroon
@@ -169,6 +170,7 @@ object Form_SAKAS: TForm_SAKAS
     ParentFont = False
     Style = tsButtons
     TabOrder = 2
+    ExplicitHeight = 497
     object TabSheet0: TTabSheet
       Caption = '  Sample  '
       ImageIndex = 3
@@ -176,7 +178,7 @@ object Form_SAKAS: TForm_SAKAS
         Left = 0
         Top = 0
         Width = 345
-        Height = 436
+        Height = 455
         Align = alClient
         BevelInner = bvRaised
         BevelOuter = bvLowered
@@ -185,7 +187,7 @@ object Form_SAKAS: TForm_SAKAS
           Left = 2
           Top = 161
           Width = 341
-          Height = 273
+          Height = 292
           Align = alClient
           Font.Charset = SHIFTJIS_CHARSET
           Font.Color = clWindowText
@@ -275,15 +277,11 @@ object Form_SAKAS: TForm_SAKAS
     object TabSheet1: TTabSheet
       Caption = 'BL cond.'
       ImageIndex = 2
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Panel5: TPanel
         Left = 0
         Top = 0
         Width = 345
-        Height = 436
+        Height = 455
         Align = alClient
         BevelInner = bvRaised
         BevelOuter = bvLowered
@@ -624,19 +622,17 @@ object Form_SAKAS: TForm_SAKAS
     object TabSheet2: TTabSheet
       Caption = 'Imager'
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
+      ExplicitHeight = 436
       object Panel3: TPanel
         Left = 0
         Top = 0
         Width = 345
-        Height = 436
+        Height = 455
         Align = alClient
         BevelInner = bvRaised
         BevelOuter = bvLowered
         TabOrder = 0
+        ExplicitHeight = 436
         object Label27: TLabel
           Left = 14
           Top = 15
@@ -653,7 +649,7 @@ object Form_SAKAS: TForm_SAKAS
         end
         object Label26: TLabel
           Left = 14
-          Top = 135
+          Top = 167
           Width = 125
           Height = 16
           Caption = 'Exposure time [ms]'
@@ -666,21 +662,21 @@ object Form_SAKAS: TForm_SAKAS
         end
         object Shape1: TShape
           Left = 49
-          Top = 234
+          Top = 262
           Width = 284
           Height = 173
           Brush.Color = clCream
         end
         object Shape2: TShape
           Left = 153
-          Top = 287
+          Top = 315
           Width = 166
           Height = 109
           Brush.Color = clMoneyGreen
         end
         object Label1: TLabel
           Left = 49
-          Top = 298
+          Top = 326
           Width = 98
           Height = 16
           Caption = #8592'                  '#8594
@@ -693,7 +689,7 @@ object Form_SAKAS: TForm_SAKAS
         end
         object Label35: TLabel
           Left = 227
-          Top = 329
+          Top = 357
           Width = 31
           Height = 19
           Caption = 'ROI'
@@ -706,7 +702,7 @@ object Form_SAKAS: TForm_SAKAS
         end
         object Label36: TLabel
           Left = 14
-          Top = 165
+          Top = 197
           Width = 145
           Height = 16
           Caption = 'BK Exposure time [ms]'
@@ -726,17 +722,24 @@ object Form_SAKAS: TForm_SAKAS
         end
         object Label39: TLabel
           Left = 14
-          Top = 105
+          Top = 137
           Width = 83
           Height = 16
           Caption = 'Binning(HxV)'
         end
         object Label40: TLabel
           Left = 232
-          Top = 105
+          Top = 137
           Width = 9
           Height = 16
           Caption = 'X'
+        end
+        object Label43: TLabel
+          Left = 14
+          Top = 105
+          Width = 76
+          Height = 16
+          Caption = 'Scintillator'
         end
         object Edit_Imager: TEdit
           Left = 169
@@ -755,7 +758,7 @@ object Form_SAKAS: TForm_SAKAS
         end
         object Edit_Exp_T: TEdit
           Left = 169
-          Top = 132
+          Top = 164
           Width = 137
           Height = 24
           Font.Charset = DEFAULT_CHARSET
@@ -769,7 +772,7 @@ object Form_SAKAS: TForm_SAKAS
         end
         object LEdit_OFFX: TLabeledEdit
           Left = 75
-          Top = 295
+          Top = 323
           Width = 50
           Height = 24
           EditLabel.Width = 53
@@ -786,7 +789,7 @@ object Form_SAKAS: TForm_SAKAS
         end
         object LEdit_OFFY: TLabeledEdit
           Left = 153
-          Top = 257
+          Top = 285
           Width = 47
           Height = 24
           EditLabel.Width = 53
@@ -803,7 +806,7 @@ object Form_SAKAS: TForm_SAKAS
         end
         object LEdit_OW: TLabeledEdit
           Left = 227
-          Top = 221
+          Top = 249
           Width = 81
           Height = 24
           EditLabel.Width = 89
@@ -820,7 +823,7 @@ object Form_SAKAS: TForm_SAKAS
         end
         object LEdit_PW: TLabeledEdit
           Left = 227
-          Top = 275
+          Top = 303
           Width = 81
           Height = 24
           EditLabel.Width = 80
@@ -839,7 +842,7 @@ object Form_SAKAS: TForm_SAKAS
         end
         object LEdit_PH: TLabeledEdit
           Left = 119
-          Top = 351
+          Top = 379
           Width = 81
           Height = 24
           EditLabel.Width = 85
@@ -856,7 +859,7 @@ object Form_SAKAS: TForm_SAKAS
         end
         object LEdit_OH: TLabeledEdit
           Left = 9
-          Top = 351
+          Top = 379
           Width = 81
           Height = 24
           EditLabel.Width = 94
@@ -873,7 +876,7 @@ object Form_SAKAS: TForm_SAKAS
         end
         object StaticText2: TStaticText
           Left = 208
-          Top = 269
+          Top = 297
           Width = 11
           Height = 20
           Caption = #8595
@@ -889,7 +892,7 @@ object Form_SAKAS: TForm_SAKAS
         end
         object StaticText1: TStaticText
           Left = 208
-          Top = 231
+          Top = 259
           Width = 11
           Height = 20
           Caption = #8593
@@ -905,7 +908,7 @@ object Form_SAKAS: TForm_SAKAS
         end
         object Edit_BKEXP_T: TEdit
           Left = 169
-          Top = 162
+          Top = 194
           Width = 137
           Height = 24
           Font.Charset = DEFAULT_CHARSET
@@ -926,7 +929,7 @@ object Form_SAKAS: TForm_SAKAS
         end
         object Edit_BINX: TEdit
           Left = 169
-          Top = 102
+          Top = 134
           Width = 56
           Height = 24
           NumbersOnly = True
@@ -935,12 +938,20 @@ object Form_SAKAS: TForm_SAKAS
         end
         object Edit_BINY: TEdit
           Left = 249
-          Top = 102
+          Top = 134
           Width = 57
           Height = 24
           NumbersOnly = True
           TabOrder = 14
           Text = '1'
+        end
+        object Edit_Sci: TEdit
+          Left = 169
+          Top = 102
+          Width = 137
+          Height = 24
+          NumbersOnly = True
+          TabOrder = 15
         end
       end
     end
@@ -949,15 +960,17 @@ object Form_SAKAS: TForm_SAKAS
       DoubleBuffered = False
       ImageIndex = 4
       ParentDoubleBuffered = False
+      ExplicitHeight = 436
       object Panel9: TPanel
         Left = 0
         Top = 0
         Width = 345
-        Height = 436
+        Height = 455
         Align = alClient
         BevelInner = bvRaised
         BevelOuter = bvLowered
         TabOrder = 0
+        ExplicitHeight = 436
         object Label34: TLabel
           Left = 14
           Top = 15
@@ -1166,7 +1179,7 @@ object Form_SAKAS: TForm_SAKAS
         Left = 0
         Top = 0
         Width = 345
-        Height = 436
+        Height = 455
         Align = alClient
         BevelInner = bvRaised
         BevelOuter = bvLowered
@@ -1524,11 +1537,12 @@ object Form_SAKAS: TForm_SAKAS
     Left = 353
     Top = 32
     Width = 358
-    Height = 497
+    Height = 516
     Align = alClient
     BevelOuter = bvNone
     Caption = 'Panel7'
     TabOrder = 3
+    ExplicitHeight = 497
     object Panel8: TPanel
       Left = 0
       Top = 0
@@ -1558,7 +1572,7 @@ object Form_SAKAS: TForm_SAKAS
       Left = 0
       Top = 30
       Width = 358
-      Height = 467
+      Height = 486
       Cursor = crIBeam
       Lines.Strings = (
         '[Sample]'
@@ -1621,6 +1635,7 @@ object Form_SAKAS: TForm_SAKAS
       Colors.Statement.BackColor = clWindow
       Colors.PlainText.ForeColor = clWindowText
       Colors.PlainText.BackColor = clWindow
+      ExplicitHeight = 467
     end
   end
   object OpenDialog1: TOpenDialog

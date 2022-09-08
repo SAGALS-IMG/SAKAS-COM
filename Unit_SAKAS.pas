@@ -132,6 +132,8 @@ type
     Label42: TLabel;
     Rot_Memo: TMemo;
     BB_Load: TBitBtn;
+    Label43: TLabel;
+    Edit_Sci: TEdit;
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
 
@@ -274,6 +276,8 @@ begin
     Edit_Pixel_Size.Text := Ini.ReadString( 'Imager', 'Pixel_Size', '');
 
     Edit_Image_Mag.Text := FloatToStr(Ini.ReadFloat('Imager','Mag',1.0));
+    Edit_Sci.Text :=Ini.ReadString('Imager','Scinti','CsI');
+
     Edit_Exp_T.Text := FloatToStr(Ini.ReadFloat('Imager','Exp_T',1000));
     Edit_BKEXP_T.Text := FloatToStr(Ini.ReadFloat('Imager','BK_Exp_T',1000));
 
@@ -363,6 +367,7 @@ begin
     Ini.WriteString( 'Imager', 'Name', Edit_Imager.Text);
     Ini.WriteString( 'Imager', 'Pixel_Size', Edit_Pixel_Size.Text);
     Ini.WriteFloat('Imager','Mag',StrToFloat(Edit_Image_Mag.Text));
+    Ini.WriteString('Imager','Scinti',Edit_Sci.Text);
     Ini.WriteFloat('Imager','Exp_T',StrToFloat(Edit_Exp_T.Text));
     Ini.WriteFloat('Imager','BK_Exp_T',StrToFloat(Edit_BKExp_T.Text));
 
