@@ -52,6 +52,8 @@ type
     Bevel3: TBevel;
     Label8: TLabel;
     Label10: TLabel;
+    BB_ST_BK: TBitBtn;
+    CB_BK: TCheckBox;
 
     procedure BB_ReDrawClick(Sender: TObject);
     procedure Draw_Data(Sender: TObject);
@@ -107,11 +109,12 @@ type
     procedure Edit_PMinKeyPress(Sender: TObject; var Key: Char);
     procedure Edit_PMaxKeyPress(Sender: TObject; var Key: Char);
     procedure SB_CopyClick(Sender: TObject);
+    procedure BB_ST_BKClick(Sender: TObject);
   private
     { Private êÈåæ }
   public
     { Public êÈåæ }
-    TmpData, PData : TData;
+    TmpData, PData, BKData : TData;
     //SData : array[0..5] of TData;
     IData : TIData;
     OW,OH,PW,PH, OFFX,OFFY,iimax,MaskV :longint;
@@ -128,7 +131,7 @@ implementation
 
 {$R *.dfm}
 
-uses main;
+uses main, Unit_Imager;
 
 procedure TForm_PW.FormCreate(Sender: TObject);
 var
@@ -223,6 +226,10 @@ end;
 procedure TForm_PW.SB_CopyClick(Sender: TObject);
 begin
   Clipboard.AsText := Edit_Left.Text+','+Edit_Top.Text+','+Edit_Right.Text+','+Edit_Bottom.Text;
+  Form_Imager.Edit_ROI_X1.Text := Edit_Left.Text;
+  Form_Imager.Edit_ROI_Y1.Text := Edit_Top.Text;
+  Form_Imager.Edit_ROI_X2.Text := Edit_Right.Text;
+  Form_Imager.Edit_ROI_Y2.Text := Edit_Bottom.Text;
 end;
 
 procedure TForm_PW.BB_SaveClick(Sender: TObject);
@@ -350,13 +357,23 @@ begin
     3: lMag := 100;
   end;
 
+  if CB_BK.Checked then
+  begin
+    for j:=0 to PH-1 do
+      for i:=0 to PW-1 do
+        if BKData[j,i] <>0  then
+          TmpData[j,i] := PData[j,i]/BKData[j,i];
+  end
+  else
+    TmpData := PData;
+
   for j:=0 to BitMap.Height-1 do
   begin
     P := BitMap.ScanLine[j];
     for i:=0 to BitMap.Width-1 do
     begin
       if (Round(i*100/lMag)<PW) and (Round(j*100/lMag)<PH) and ((PMax-PMin)<>0)then
-        TmpInt := Round((PData[Round(j*100/lMag),Round(i*100/lMag)]-PMin)/(PMax-PMin)*255)
+        TmpInt := Round((TmpData[Round(j*100/lMag),Round(i*100/lMag)]-PMin)/(PMax-PMin)*255)
       else
         TmpInt := 50;
       if TmpInt>255 then TmpInt := 255;
@@ -1132,6 +1149,11 @@ begin
     FS.WriteBuffer(lData,PW*2);
   end;
   FS.Free;
+end;
+
+procedure TForm_PW.BB_ST_BKClick(Sender: TObject);
+begin
+  BKData := PData;
 end;
 
 

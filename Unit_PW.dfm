@@ -2,8 +2,8 @@ object Form_PW: TForm_PW
   Left = 0
   Top = 0
   Caption = 'Image'
-  ClientHeight = 624
-  ClientWidth = 767
+  ClientHeight = 680
+  ClientWidth = 825
   Color = clBtnFace
   Constraints.MinHeight = 200
   Constraints.MinWidth = 500
@@ -21,24 +21,27 @@ object Form_PW: TForm_PW
   object Panel2: TPanel
     Left = 0
     Top = 0
-    Width = 767
-    Height = 624
+    Width = 825
+    Height = 680
     Align = alClient
     BevelInner = bvRaised
     BevelOuter = bvLowered
     TabOrder = 0
+    ExplicitWidth = 767
+    ExplicitHeight = 624
     object Panel3: TPanel
       Left = 2
       Top = 2
-      Width = 763
+      Width = 821
       Height = 98
       Align = alTop
       BevelOuter = bvNone
       TabOrder = 0
+      ExplicitWidth = 763
       object GroupBox2: TGroupBox
         Left = 0
         Top = 0
-        Width = 763
+        Width = 821
         Height = 98
         Align = alClient
         Caption = 'Drawing'
@@ -52,6 +55,7 @@ object Form_PW: TForm_PW
         ParentColor = False
         ParentFont = False
         TabOrder = 0
+        ExplicitWidth = 763
         object Bevel2: TBevel
           Left = 559
           Top = 70
@@ -169,7 +173,7 @@ object Form_PW: TForm_PW
           ParentFont = False
         end
         object Label5: TLabel
-          Left = 254
+          Left = 247
           Top = 51
           Width = 48
           Height = 14
@@ -288,7 +292,7 @@ object Form_PW: TForm_PW
           OnKeyUp = Edit_PMaxKeyUp
         end
         object CB_Mag: TComboBox
-          Left = 179
+          Left = 177
           Top = 70
           Width = 60
           Height = 22
@@ -310,7 +314,7 @@ object Form_PW: TForm_PW
         object BB_ReDraw: TBitBtn
           Left = 6
           Top = 20
-          Width = 75
+          Width = 72
           Height = 25
           Caption = 'Redraw'
           Font.Charset = DEFAULT_CHARSET
@@ -323,7 +327,7 @@ object Form_PW: TForm_PW
           OnClick = BB_ReDrawClick
         end
         object Edit_Left: TEdit
-          Left = 324
+          Left = 329
           Top = 20
           Width = 40
           Height = 22
@@ -340,7 +344,7 @@ object Form_PW: TForm_PW
           OnKeyUp = Edit_LeftKeyUp
         end
         object Edit_Top: TEdit
-          Left = 370
+          Left = 375
           Top = 20
           Width = 40
           Height = 22
@@ -391,11 +395,11 @@ object Form_PW: TForm_PW
           OnKeyUp = Edit_LeftKeyUp
         end
         object BB_ImgCopy: TBitBtn
-          Left = 89
+          Left = 83
           Top = 20
-          Width = 90
+          Width = 72
           Height = 25
-          Caption = 'Copy Img'
+          Caption = 'Copy'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -12
@@ -420,11 +424,11 @@ object Form_PW: TForm_PW
           OnClick = BB_ImgCopyClick
         end
         object BB_Save: TBitBtn
-          Left = 185
+          Left = 160
           Top = 20
-          Width = 90
+          Width = 72
           Height = 25
-          Caption = 'Save Img'
+          Caption = 'Save'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -12
@@ -449,7 +453,7 @@ object Form_PW: TForm_PW
           OnClick = BB_SaveClick
         end
         object Edit_No: TEdit
-          Left = 254
+          Left = 247
           Top = 70
           Width = 53
           Height = 22
@@ -458,7 +462,7 @@ object Form_PW: TForm_PW
           Text = '1'
         end
         object UD_Tpro: TUpDown
-          Left = 307
+          Left = 300
           Top = 70
           Width = 16
           Height = 22
@@ -476,15 +480,41 @@ object Form_PW: TForm_PW
           Caption = 'Auto'
           TabOrder = 12
         end
+        object BB_ST_BK: TBitBtn
+          Left = 237
+          Top = 20
+          Width = 83
+          Height = 25
+          Caption = 'Store as BK'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -12
+          Font.Name = 'Tahoma'
+          Font.Style = [fsBold]
+          NumGlyphs = 2
+          ParentFont = False
+          TabOrder = 13
+          OnClick = BB_ST_BKClick
+        end
+        object CB_BK: TCheckBox
+          Left = 331
+          Top = 75
+          Width = 46
+          Height = 17
+          Caption = '/BK'
+          TabOrder = 14
+        end
       end
     end
     object ScrollBox1: TScrollBox
       Left = 2
       Top = 100
-      Width = 763
-      Height = 522
+      Width = 821
+      Height = 578
       Align = alClient
       TabOrder = 1
+      ExplicitWidth = 763
+      ExplicitHeight = 522
       object Image1: TImage
         Left = 0
         Top = 0
