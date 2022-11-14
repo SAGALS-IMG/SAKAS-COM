@@ -27,8 +27,6 @@ object Form_PW: TForm_PW
     BevelInner = bvRaised
     BevelOuter = bvLowered
     TabOrder = 0
-    ExplicitWidth = 767
-    ExplicitHeight = 624
     object Panel3: TPanel
       Left = 2
       Top = 2
@@ -37,7 +35,6 @@ object Form_PW: TForm_PW
       Align = alTop
       BevelOuter = bvNone
       TabOrder = 0
-      ExplicitWidth = 763
       object GroupBox2: TGroupBox
         Left = 0
         Top = 0
@@ -55,7 +52,6 @@ object Form_PW: TForm_PW
         ParentColor = False
         ParentFont = False
         TabOrder = 0
-        ExplicitWidth = 763
         object Bevel2: TBevel
           Left = 559
           Top = 70
@@ -467,7 +463,7 @@ object Form_PW: TForm_PW
           Width = 16
           Height = 22
           Associate = Edit_No
-          Max = 10000
+          Max = 100000
           Position = 1
           TabOrder = 4
           OnClick = UD_TproClick
@@ -513,8 +509,6 @@ object Form_PW: TForm_PW
       Height = 578
       Align = alClient
       TabOrder = 1
-      ExplicitWidth = 763
-      ExplicitHeight = 522
       object Image1: TImage
         Left = 0
         Top = 0

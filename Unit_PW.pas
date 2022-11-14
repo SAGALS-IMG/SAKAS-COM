@@ -9,7 +9,9 @@ uses
 
 const
   PX_Max = 2600;
-  PY_Max = 2600;
+  PY_Max = 3050;
+//  PX_Max = 600;
+//  PY_Max = 1300;
 
 type
   TData = array[-50..PY_Max,-50..PX_Max] of double;
@@ -131,7 +133,7 @@ implementation
 
 {$R *.dfm}
 
-uses main, Unit_Imager;
+uses main{, Unit_Imager};
 
 procedure TForm_PW.FormCreate(Sender: TObject);
 var
@@ -226,10 +228,10 @@ end;
 procedure TForm_PW.SB_CopyClick(Sender: TObject);
 begin
   Clipboard.AsText := Edit_Left.Text+','+Edit_Top.Text+','+Edit_Right.Text+','+Edit_Bottom.Text;
-  Form_Imager.Edit_ROI_X1.Text := Edit_Left.Text;
-  Form_Imager.Edit_ROI_Y1.Text := Edit_Top.Text;
-  Form_Imager.Edit_ROI_X2.Text := Edit_Right.Text;
-  Form_Imager.Edit_ROI_Y2.Text := Edit_Bottom.Text;
+//  Form_Imager.Edit_ROI_X1.Text := Edit_Left.Text;
+//  Form_Imager.Edit_ROI_Y1.Text := Edit_Top.Text;
+//  Form_Imager.Edit_ROI_X2.Text := Edit_Right.Text;
+//  Form_Imager.Edit_ROI_Y2.Text := Edit_Bottom.Text;
 end;
 
 procedure TForm_PW.BB_SaveClick(Sender: TObject);
